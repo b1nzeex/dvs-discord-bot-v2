@@ -1,0 +1,29 @@
+{
+  "name": "dvs-discord-bot-v2",
+  "version": "2.0.0",
+  "description": "A private discord bot for the DvS server with multi-functionality.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && cls && node ."
+  },
+  "keywords": [],
+  "author": "b1nzee",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "@sapphire/decorators": "^6.0.4",
+    "@sapphire/framework": "^5.0.7",
+    "@sapphire/plugin-api": "^6.1.1",
+    "@sapphire/plugin-subcommands": "^6.0.3",
+    "@sapphire/time-utilities": "^1.7.12",
+    "common-tags": "^1.8.2",
+    "discord.js": "^14.14.1",
+    "dot-prop": "6.0.1",
+    "dotenv": "^16.4.5",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "prisma": "^5.10.2"
+  }
+}
