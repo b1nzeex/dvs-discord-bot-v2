@@ -1,9 +1,10 @@
-import { Listener } from "@sapphire/framework";
+import { Events, Listener } from "@sapphire/framework";
 import { ApplyOptions } from "@sapphire/decorators";
 import { parse } from "path";
 
 @ApplyOptions<Listener.Options>({
   name: parse(__filename).name.split(".")[0],
+  event: Events.ClientReady,
   once: true,
 })
 export class ReadyListener extends Listener {

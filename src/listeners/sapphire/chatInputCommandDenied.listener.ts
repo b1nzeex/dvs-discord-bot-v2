@@ -1,13 +1,16 @@
 import {
+  Events,
   Listener,
   type ChatInputCommandDeniedPayload,
   type UserError,
 } from "@sapphire/framework";
+import { parse } from "path";
 import { ApplyOptions } from "@sapphire/decorators";
 
 @ApplyOptions<Listener.Options>({
-  name: __filename.split(".")[0],
+  name: parse(__filename).name.split(".")[0],
   enabled: true,
+  event: Events.ChatInputCommandDenied,
 })
 export class ChatInputCommandDeniedListener extends Listener {
   public run(error: UserError, { interaction }: ChatInputCommandDeniedPayload) {
