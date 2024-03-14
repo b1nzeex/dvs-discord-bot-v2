@@ -50,7 +50,7 @@ export class ServerCommands extends Subcommand {
   */
   public override registerApplicationCommands(registry: Subcommand.Registry) {
     registry.registerChatInputCommand((command) => {
-      command
+      return command
         .setName(this.name)
         .setDescription(this.description)
         .addSubcommand((command) =>
@@ -98,19 +98,22 @@ export class ServerCommands extends Subcommand {
   }
 
   public chatInputAdd(interaction: Subcommand.ChatInputCommandInteraction) {
-    console.log("test");
+    console.log("chatInputAdd");
     return ServerAddSubcommand.chatInputRun(interaction);
   }
 
   public chatInputRemove(interaction: Subcommand.ChatInputCommandInteraction) {
+    console.log("chatInputRemove");
     return ServerRemoveSubcommand.chatInputRun(interaction);
   }
 
   public chatInputEdit(interaction: Subcommand.ChatInputCommandInteraction) {
+    console.log("chatInputEdit");
     return ServerEditSubcommand.chatInputRun(interaction);
   }
 
   public chatInputView(interaction: Subcommand.ChatInputCommandInteraction) {
+    console.log("chatInputView");
     return ServerViewSubcommand.chatInputRun(interaction);
   }
 }

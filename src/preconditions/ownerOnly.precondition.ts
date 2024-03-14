@@ -1,3 +1,4 @@
+import { ApplyOptions } from "@sapphire/decorators";
 import { Precondition } from "@sapphire/framework";
 import { ChatInputCommandInteraction } from "discord.js";
 
@@ -7,6 +8,9 @@ declare module "@sapphire/framework" {
   }
 }
 
+@ApplyOptions<Precondition.Options>({
+  name: 'OwnerOnly',
+})
 export class OwnerOnlyPrecondition extends Precondition {
   public override chatInputRun(interaction: ChatInputCommandInteraction) {
     return this.isOwner(interaction.user.id);
